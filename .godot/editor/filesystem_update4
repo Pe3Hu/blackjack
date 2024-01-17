@@ -1,0 +1,5 @@
+res://scene/2/combo.tscn
+res://scene/3/card.tscn
+res://scene/3/cardstack.gd
+res://scene/0/icon.gd
+res://scene/0/game.gd
