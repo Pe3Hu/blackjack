@@ -27,7 +27,7 @@ func init_basic_setting() -> void:
 
 func init_index() -> void:
 	var input = {}
-	input.type = "number"
+	input.type = "gambler"
 	input.subtype = Global.num.index.gambler
 	index.set_attributes(input)
 	Global.num.index.gambler += 1

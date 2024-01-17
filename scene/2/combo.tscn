@@ -32,11 +32,35 @@ layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Chance" parent="VBox" instance=ExtResource("1_y516d")]
+[node name="Chance" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" parent="VBox/Chance" instance=ExtResource("1_y516d")]
 layout_mode = 2
 
-[node name="Amount" parent="VBox" instance=ExtResource("1_y516d")]
+[node name="Value" parent="VBox/Chance" instance=ExtResource("1_y516d")]
 layout_mode = 2
 
-[node name="Limit" parent="VBox" instance=ExtResource("1_y516d")]
+[node name="Amount" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" parent="VBox/Amount" instance=ExtResource("1_y516d")]
+layout_mode = 2
+
+[node name="Value" parent="VBox/Amount" instance=ExtResource("1_y516d")]
+layout_mode = 2
+
+[node name="Limit" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" parent="VBox/Limit" instance=ExtResource("1_y516d")]
+layout_mode = 2
+
+[node name="Value" parent="VBox/Limit" instance=ExtResource("1_y516d")]
 layout_mode = 2

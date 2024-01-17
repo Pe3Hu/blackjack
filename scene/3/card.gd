@@ -32,7 +32,7 @@ func init_basic_setting(input_: Dictionary) -> void:
 	
 	#suit.set("theme_override_constants/margin_left", 4)
 	#suit.set("theme_override_constants/margin_top", 4)
-	custom_minimum_size = suit.custom_minimum_size + rank.custom_minimum_size * 0.5
+	custom_minimum_size = suit.custom_minimum_size + rank.custom_minimum_size * 0.6
 
 	
 	var style = StyleBoxFlat.new()

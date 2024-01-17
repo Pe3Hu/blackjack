@@ -49,6 +49,10 @@ func init_dict() -> void:
 	dict.chain.area["hand"] = "discharged"
 	dict.chain.area["broken"] = "discharged"
 	
+	dict.chain.side = {}
+	dict.chain.side["right"] = "left"
+	dict.chain.side["left"] = "right"
+	
 	dict.donor = {}
 	dict.donor.area = {}
 	dict.donor.area["available"] = "discharged"
@@ -113,7 +117,7 @@ func init_card() -> void:
 	arr.rank = [3, 4, 6, 8, 12]
 	dict.card = {}
 	dict.card.count = {}
-	arr.suit = ["aqua"]
+	arr.suit = ["spades"]#["clubs", "diamonds", "hearts", "spades"]
 	
 	for rank in arr.rank:
 		dict.card.count[rank] = num.apotheosis.amount / rank
@@ -150,15 +154,13 @@ func init_scene() -> void:
 
 func init_vec():
 	vec.size = {}
-	vec.size.letter = Vector2(20, 20)
-	vec.size.icon = Vector2(48, 48)
-	vec.size.number = Vector2(5, 32)
 	vec.size.sixteen = Vector2(16, 16)
-	
 	vec.size.suit = Vector2(32, 32)
+	
 	vec.size.rank = Vector2(vec.size.sixteen)
-	vec.size.box = Vector2(100, 100)
-	vec.size.bar = Vector2(120, 12)
+	vec.size.combo = Vector2(vec.size.sixteen) * 2
+	vec.size.gambler = Vector2(vec.size.sixteen) * 3
+	vec.size.libra = Vector2(vec.size.sixteen) * 4
 	
 	init_window_size()
 
