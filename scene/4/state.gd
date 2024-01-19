@@ -45,7 +45,7 @@ func update_value(value_: String, shift_: int) -> void:
 				var _type = Global.dict.donor.state[type]
 				
 				if type == "fatigue":
-					health.gambler.table.set_loser(self)
+					health.gambler.table.set_loser(health.gambler)
 				elif _type != null:
 					var state = health.get(_type)
 					health.state = _type
@@ -65,7 +65,7 @@ func update_value(value_: String, shift_: int) -> void:
 				bar.value = bar.max_value
 				value.visible = false
 			
-			value.text = str(bar.value)
+			value.text = str(health.value.current)
 		"maximum":
 			value.visible = bar.max_value != bar.value
 			bar.max_value += shift_

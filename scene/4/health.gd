@@ -52,6 +52,6 @@ func init_states(input_: Dictionary) -> void:
 
 func change_integrity(integrity_: int) -> void:
 	var indicator = get(state)
-	indicator.update_value("current", integrity_)
 	value.current += integrity_
+	indicator.update_value("current", integrity_)
 

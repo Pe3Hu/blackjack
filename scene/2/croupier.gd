@@ -43,8 +43,8 @@ func init_basic_setting() -> void:
 func commence() -> void:
 	init_basic_setting()
 	
-	#while table.loser == null:
-	#	next_stage()
+	while table.loser == null:
+		follow_stage()
 #endregion
 
 
@@ -110,6 +110,7 @@ func penalty_for_loser() -> void:
 					if combo.amountValue.get_number() <= combo.limitValue.get_number():
 						damage += combo.amountValue.get_number()
 		
+		print(damage)
 		loser.health.change_integrity(damage)
 		loser = null
 		winner = null
@@ -124,8 +125,8 @@ func update_loser() -> void:
 
 
 func follow_stage() -> void:
-	print([phase, stage])
-	call(stage)
+	if table.loser == null:
+		call(stage)
 
 
 func next_stage() -> void:

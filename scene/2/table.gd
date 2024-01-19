@@ -44,5 +44,3 @@ func set_loser(loser_: MarginContainer) -> void:
 		if gambler != loser:
 			winner = gambler
 			break
-	
-	print(winner.health.index.get_number(), " is winner")
