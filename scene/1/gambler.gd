@@ -3,7 +3,7 @@ extends MarginContainer
 
 #region vars
 @onready var gameboard = $VBox/Gameboard
-@onready var index = $VBox/Index
+@onready var health = $VBox/Health
 
 var cradle = null
 var table = null
@@ -22,13 +22,11 @@ func init_basic_setting() -> void:
 	var input = {}
 	input.gambler = self
 	gameboard.set_attributes(input)
-	init_index()
-
-
-func init_index() -> void:
-	var input = {}
-	input.type = "gambler"
-	input.subtype = Global.num.index.gambler
-	index.set_attributes(input)
-	Global.num.index.gambler += 1
+	
+	input.limits = {}
+	input.limits.vigor = 0.25
+	input.limits.standard = 0.5
+	input.limits.fatigue = 0.25
+	input.total = 100
+	health.set_attributes(input)
 #endregion

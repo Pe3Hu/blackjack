@@ -54,7 +54,7 @@ func update_amount(card_: MarginContainer) -> void:
 	amountValue.change_number(rank)
 	
 	if fiasco_check():
-		print(["fiasco", gambler.index.subtype])
+		#print(["fiasco", gambler.health.index.subtype])
 		croupier.set_loser(gambler)
 		chanceValue.set_number(100)
 	else:
@@ -77,7 +77,7 @@ func calculate_chance_of_fiasco() -> void:
 			outcomes.success += 100.0 / outcomes.total
 	
 	outcomes.failure = 100.0 - outcomes.success
-	print([amountValue.get_number(), outcomes])
+	#print([amountValue.get_number(), outcomes])
 	chanceValue.set_number(int(outcomes.failure))
 
 
@@ -90,3 +90,12 @@ func risk_assessment() -> void:
 
 func lock_in() -> void:
 	croupier.locks.append(gambler)
+
+
+func reset() -> void:
+	croupier.locks.erase(gambler)
+	var keys = ["amount", "chance"]
+	
+	for key in keys:
+		var icon = get(key + "Value")
+		icon.set_number(0)

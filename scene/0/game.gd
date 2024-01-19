@@ -15,5 +15,11 @@ func _input(event) -> void:
 		match event.keycode:
 			KEY_SPACE:
 				if event.is_pressed() && !event.is_echo():
-					pass
+					sketch.casino.tables.get_child(0).croupier.follow_stage()
+			KEY_A:
+				if event.is_pressed() && !event.is_echo():
+					sketch.casino.tables.get_child(0).gamblers.front().health.change_integrity(-10)
+			KEY_D:
+				if event.is_pressed() && !event.is_echo():
+					sketch.casino.tables.get_child(0).gamblers.front().health.change_integrity(10)
 

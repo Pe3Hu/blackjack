@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://da80rvclernjh"]
 
 [ext_resource type="Script" path="res://scene/1/gambler.gd" id="1_583bm"]
-[ext_resource type="PackedScene" uid="uid://ciw38iqel0v5a" path="res://scene/0/icon.tscn" id="2_4ymay"]
+[ext_resource type="PackedScene" uid="uid://cnlof2444v3rr" path="res://scene/4/health.tscn" id="2_04ego"]
 [ext_resource type="PackedScene" uid="uid://dtop6ce8ht5b" path="res://scene/3/gameboard.tscn" id="2_u8gk5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7paps"]
@@ -32,7 +32,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7paps")
 layout_mode = 2
 alignment = 1
 
-[node name="Index" parent="VBox" instance=ExtResource("2_4ymay")]
+[node name="Health" parent="VBox" instance=ExtResource("2_04ego")]
 layout_mode = 2
 
 [node name="Gameboard" parent="VBox" instance=ExtResource("2_u8gk5")]

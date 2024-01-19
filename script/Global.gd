@@ -26,6 +26,9 @@ func init_arr() -> void:
 	arr.rank = [1, 2, 3, 4, 5]#, 6]
 	arr.suit = ["aqua", "wind", "fire", "earth"]
 	arr.side = ["left", "right"]
+	arr.state = ["vigor", "standard", "fatigue"]
+	arr.medal = ["winner", "loser"]
+	arr.phase = ["dawn", "noon", "dusk"]
 
 
 func init_num() -> void:
@@ -57,6 +60,27 @@ func init_dict() -> void:
 	dict.donor.area = {}
 	dict.donor.area["available"] = "discharged"
 	dict.donor.area["hand"] = "available"
+	
+	dict.donor.state = {}
+	dict.donor.state["vigor"] = "standard"
+	dict.donor.state["standard"] = "fatigue"
+	dict.donor.state["fatigue"] = null
+	
+	dict.chain.state = {}
+	dict.chain.state["fatigue"] = "standard"
+	dict.chain.state["standard"] = "vigor"
+	dict.chain.state["vigor"] = null
+	
+	dict.chain.phase = {}
+	dict.chain.phase["dawn"] = "noon"
+	dict.chain.phase["noon"] = "dusk"
+	dict.chain.phase["dusk"] = "dawn"
+	
+	dict.phase = {}
+	dict.phase.stage = {}
+	dict.phase.stage["dawn"] = ["preparing"]
+	dict.phase.stage["noon"] = ["balancing"]
+	dict.phase.stage["dusk"] = ["reckoning"]
 
 
 func init_neighbor() -> void:
@@ -162,6 +186,10 @@ func init_vec():
 	vec.size.gambler = Vector2(vec.size.sixteen) * 3
 	vec.size.libra = Vector2(vec.size.sixteen) * 4
 	
+	vec.size.state = Vector2(128, 16)
+	#vec.size.tick = Vector2(5, 12)
+	#vec.size.stage = Vector2(vec.size.tick)
+	
 	init_window_size()
 
 
@@ -178,6 +206,18 @@ func init_color():
 	color.card = {}
 	color.card.selected = Color.from_hsv(160 / h, 0.6, 0.7)
 	color.card.unselected = Color.from_hsv(0 / h, 0.4, 0.9)
+	
+	color.state = {}
+	color.state.vigor = {}
+	color.state.vigor.fill = Color.from_hsv(120 / h, 1, 0.9)
+	color.state.vigor.background = Color.from_hsv(120 / h, 0.25, 0.9)
+	color.state.standard = {}
+	color.state.standard.fill = Color.from_hsv(30 / h, 1, 0.9)
+	color.state.standard.background = Color.from_hsv(30 / h, 0.25, 0.9)
+	color.state.fatigue = {}
+	color.state.fatigue.fill = Color.from_hsv(0, 1, 0.9)
+	color.state.fatigue.background = Color.from_hsv(0, 0.25, 0.9)
+
 
 
 func save(path_: String, data_: String):

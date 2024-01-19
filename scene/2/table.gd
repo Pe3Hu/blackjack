@@ -7,6 +7,8 @@ extends MarginContainer
 
 var casino = null
 var gamblers = []
+var winner = null
+var loser = null
 #endregion
 
 
@@ -33,3 +35,14 @@ func add_gambler(gambler_: MarginContainer) -> void:
 	gamblers.append(gambler_)
 	gambler_.table = self
 #endregion
+
+
+func set_loser(loser_: MarginContainer) -> void:
+	loser = loser_
+	
+	for gambler in gamblers:
+		if gambler != loser:
+			winner = gambler
+			break
+	
+	print(winner.health.index.get_number(), " is winner")
